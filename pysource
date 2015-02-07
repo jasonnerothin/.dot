@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+#export PYSOURCE_HOME="$HOME/.pysource"
+export PYSOURCE_PYTHON="$HOME/.virtualenvs/2/cosmo2/bin/python"
+source "$HOME/.virtualenvs/2/cosmo2/bin/pysource.sh"

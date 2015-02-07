@@ -1,0 +1,65 @@
+#! /usr/bin/env bash
+
+export STATE_FILE=${STATE_FILE="$HOME/.state"}
+
+state() {
+    case "$@" in
+        -c ) __state_clear     ;;
+        *=*) __state_store "$@";;
+        *  ) __state_get   "$@";;
+    esac
+}
+
+__state_store() {
+    __state_read
+    local key="$(cut -d '=' -f 1 <<< "$@")"
+    local value="$(cut -d '=' -f 2- <<< "$@")"
+    key="${key##*( )}"
+    key="${key%%*( )}"
+    value="${value##*( )}"
+    value="${value%%*( )}"
+    if [[ -z $value ]]; then
+        local query="del(.[\"${key}\"])"
+        __STATE="$(jq "$query" <<< "$__STATE")"
+    else
+        __STATE="$(jq ". + {\"${key}\": \"${value}\"}" <<< "$__STATE")"
+    fi
+    __state_write
+}
+
+__state_get() {
+    __state_read
+    local query
+    local key="$@"
+    key="${key##*( )}"
+    key="${key%%*( )}"
+    if [[ -z $key ]]; then
+        query='.'
+    else
+        query=".[\"${key}\"]"
+    fi
+    local result="$(jq "$query" -r <<< "$__STATE")"
+    if [[ $result != "null" ]]; then
+        echo "$result"
+    fi
+}
+
+__state_read() {
+    [[ ! -f $STATE_FILE ]] && __state_clear
+    __STATE="$(cat $STATE_FILE)"
+}
+
+__state_write() {
+    printf "$__STATE" > $STATE_FILE
+}
+
+__state_format() {
+    __state_read
+    local formatted="$(jq 'to_entries | .[] | @text "\(.key)=\(.value)"' -r <<< $__STATE)"
+    formatted="$(tr '\n' '|'<<< "$formatted")"
+    printf "${formatted:0:(-1)}"
+}
+
+__state_clear() {
+    printf "{}" > $STATE_FILE
+}

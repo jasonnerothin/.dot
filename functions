@@ -1,0 +1,99 @@
+#! /usr/bin/env bash
+
+set-title()
+{
+	printf '\e]2;%s\a' "$*"
+}
+
+devpi()
+{
+    case "$1" in
+    start) export PIP_INDEX_URL=http://localhost:3141/root/pypi/+simple/ ;;
+    stop ) unset  PIP_INDEX_URL                                          ;;
+    esac
+    "$HOME/.virtualenvs/2/devpi/bin/devpi-server" --$1
+}
+
+vpn()
+{
+    sudo systemctl $1 openvpn@giga
+}
+
+rest()
+{
+    local base_uri="$1"
+    local method
+    for method in GET POST PUT DELETE PATCH HEAD; do
+        eval "
+            ${method,,}() {
+                local resource=\$1; shift
+                http ${method} ${base_uri}\${resource} \$@
+            }
+        "
+    done
+}
+
+create-prompt-here()
+{
+    local filename=.prompt
+    touch $filename || (echo "Failed creating ${filename}" && return 1)
+    chmod +x $filename || (echo "Failed chmoding ${filename}" && return 1)
+    sub $filename || (echo "Failed opening sublime with ${filename}" && return 1)
+}
+
+strip-ansi()
+{
+    local path=$1
+    cat $path | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" | sed 's/.*==>//' > "${path}-no-ansi"
+}
+
+download-cloudify-packages()
+{
+    # local base=http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/nightly
+    local base=http://tarzan/builds/GigaSpacesBuilds/cloudify3/nightly
+    local packages=(
+        components
+        core
+        ui
+        ubuntu-agent
+        centos-final-agent
+        windows-agent
+    )
+    for package in ${packages[@]}; do
+        wget ${base}/cloudify-${package}_amd64.deb -O ${package}.deb
+    done
+}
+
+__cloudify-ui()
+{
+    local default_server=11.0.0.7
+    local default_port=8100
+    rvm use ruby-1.8.7
+    pushd ~/dev/cloudify/cosmo-ui
+    UI_COSMO_SERVER=${server-$default_server} UI_COSMO_PORT=${port-$default_port} nodemon server.js &
+    grunt server &
+}
+
+jsonpp()
+{
+    see -l json <(cat $1 | jq '.')
+}
+
+cdconfiguration()
+{
+    cd ~/work/cfy/configurations/$1
+}
+
+rmq()
+{
+    rm -r ~/opt/rabbitmq_server-3.2.1/var
+    rabbitmq-server
+}
+
+
+rmq-reset()
+{
+    rabbitmqctl stop_app
+    rabbitmqctl reset
+    rabbitmqctl start_app
+}

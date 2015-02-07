@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+alias vi='vim'
+alias ls='ls -l --group-directories-first --color=auto'
+alias nosetests='nosetests --nocapture --nologcapture'
+alias pgrep='pgrep -af'
+alias pkill='pkill -f'
+alias cosmo_idea='cd $HOME/work/cfy && workon cloudify && idea'
+alias jekyll-serve='jekyll serve --limit_posts 1 -w'
+alias grep='grep --color=auto'
+alias cdev='workon cloudify'

@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+source "$HOME/dev/mine/pygments_extensions/scripts/see.sh"

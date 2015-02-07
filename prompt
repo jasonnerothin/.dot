@@ -1,0 +1,30 @@
+#! /usr/bin/env bash
+
+__user_custom_prompt() {
+    local cyan='\[\033[36m\]'
+    local yellow='\[\033[33m\]'
+    local nil='\[\033[00m\]'
+    local venv=''
+    local _state="$(__state_format)"
+    if [[ -x .prompt ]]; then
+        local dir_prompt="\n$(./.prompt)"
+    else
+        local dir_prompt=''
+    fi
+
+    if [[ ! -z $_state ]]; then
+        _state="\n|${cyan}${_state}${nil}|"
+    fi
+
+    if [[ ! -z $VIRTUAL_ENV ]]; then
+        local venv="{${yellow}$(basename ${VIRTUAL_ENV})${nil}}"
+    fi
+
+    local before_git_data="[\w]"
+    local git_data="(%s)"
+    local after_git_data="${venv}${_state}${dir_prompt}\n\$ "
+
+    __git_ps1 "$before_git_data" "$after_git_data" "$git_data"
+}
+
+PROMPT_COMMAND='__user_custom_prompt'
