@@ -97,3 +97,8 @@ rmq-reset()
     rabbitmqctl reset
     rabbitmqctl start_app
 }
+
+taskcurrent()
+{
+    echo "urgency.user.tag.${1}.coefficient=1.0" > ~/.task.current
+}
