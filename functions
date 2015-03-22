@@ -102,3 +102,18 @@ taskcurrent()
 {
     echo "urgency.user.tag.${1}.coefficient=1.0" > ~/.task.current
 }
+
+init-kilmand-repo()
+{
+    local remote_repo_path="home/dan/repos/$(basename $PWD).git"
+    ssh kilmand -- "\
+        mkdir /${remote_repo_path}; \
+        cd /${remote_repo_path}; \
+        git --bare init; \
+        git config core.sharedrepository 1; \
+        git config receive.denyNonFastforwards true; \
+        find objects -type d -exec chmod 02770 {} \;
+    "
+    git remote add kilmand "ssh://kilmand/${remote_repo_path}"
+    git push -u kilmand master
+}
