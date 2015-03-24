@@ -1,3 +1,4 @@
 #! /usr/bin/env bash
 
+SEE_PYGMENTIZE=/usr/bin/pygmentize
 source "$HOME/dev/mine/pygments_extensions/scripts/see.sh"
