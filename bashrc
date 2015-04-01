@@ -17,12 +17,11 @@ __sourced=(
     rvm
     see
     virtualenvwrapper
-    # pysource
     fasd
 )
 
 for __item in ${__sourced[@]}; do
-    source "$HOME/.bash/$__item"
+    source "${HOME}/.bash/${__item}"
 done
 
 unset __item
