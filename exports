@@ -19,7 +19,7 @@ __user_exports_pathadd "$HOME/opt/logstash-1.4.0/bin"
 __user_exports_pathadd "$HOME/bin"
 __user_exports_pathadd "$HOME/.local/bin"
 
-__user_exports_pythonpathadd "$HOME/work/pythonpath"
+__user_exports_pythonpathadd "$HOME/dev/mine/pythonpath"
 
 export EDITOR=vim
 
