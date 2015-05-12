@@ -117,3 +117,8 @@ init-kilmand-repo()
     git remote add kilmand "ssh://kilmand/${remote_repo_path}"
     git push -u kilmand master
 }
+
+clear-vbox-network()
+{
+    VBoxManage hostonlyif remove vboxnet${1}
+}
