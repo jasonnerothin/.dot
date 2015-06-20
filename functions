@@ -5,15 +5,6 @@ set-title()
 	printf '\e]2;%s\a' "$*"
 }
 
-devpi()
-{
-    case "$1" in
-    start) export PIP_INDEX_URL=http://localhost:3141/root/pypi/+simple/ ;;
-    stop ) unset  PIP_INDEX_URL                                          ;;
-    esac
-    "$HOME/.virtualenvs/2/devpi/bin/devpi-server" --$1
-}
-
 vpn()
 {
     sudo systemctl $1 openvpn@giga
