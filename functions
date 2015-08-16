@@ -34,8 +34,20 @@ create-prompt-here()
 
 strip-ansi()
 {
+    sed -r "s/\x1B\[.?([0-9]{1,2}(;[0-9]{1,2})?)?[l|h|m|K]//g"
+}
+
+quickbuild-log-cat()
+{
     local path=$1
-    cat $path | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" | sed 's/.*==>//' > "${path}-no-ansi"
+    cat $path | strip-ansi | grep -v "\(INFO\|WARNING\):suites_runner:" | grep -v InsecurePlatformWarning
+}
+
+quickbuild-log-suite-cat()
+{
+    local path=$1
+    local suite=$2
+    quickbuild-log-cat $path | grep ${suite} | sed -r "s/.*${suite}: //g"
 }
 
 download-cloudify-packages()
