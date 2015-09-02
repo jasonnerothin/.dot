@@ -24,14 +24,6 @@ rest()
     done
 }
 
-create-prompt-here()
-{
-    local filename=.prompt
-    touch $filename || (echo "Failed creating ${filename}" && return 1)
-    chmod +x $filename || (echo "Failed chmoding ${filename}" && return 1)
-    sub $filename || (echo "Failed opening sublime with ${filename}" && return 1)
-}
-
 strip-ansi()
 {
     sed -r "s/\x1B\[.?([0-9]{1,2}(;[0-9]{1,2})?)?[l|h|m|K]//g"

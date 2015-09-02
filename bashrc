@@ -10,7 +10,6 @@ __sourced=(
     exports
     aliases
     functions
-    state
     completions
     git
     prompt
