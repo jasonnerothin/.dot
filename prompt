@@ -14,7 +14,7 @@ __user_custom_prompt() {
 
     local venv=''
     if [[ ! -z $VIRTUAL_ENV ]]; then
-        local venv="{${venv_color}$(basename ${VIRTUAL_ENV})${nil}}"
+        local venv="{${venv_color}${VIRTUAL_ENV##*/}${nil}}"
     fi
 
     if [[ $last_command == 0 ]]; then
