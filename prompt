@@ -4,23 +4,23 @@ __user_custom_prompt() {
 
     local last_command=$?
 
-    local yellow='\[\033[33m\]'
-    local red='\[\033[01;31m\]'
-    local green='\[\033[01;32m\]'
-    local nil='\[\033[00m\]'
+    local venv_color=${CLR[ylw]}
+    local status_error=${CLR[bred]}
+    local status_ok=${CLR[bgrn]}
+    local nil=${CLR[reset]}
 
     local checkmark='\342\234\223'
     local fancy_x='\342\234\227'
 
     local venv=''
     if [[ ! -z $VIRTUAL_ENV ]]; then
-        local venv="{${yellow}$(basename ${VIRTUAL_ENV})${nil}}"
+        local venv="{${venv_color}$(basename ${VIRTUAL_ENV})${nil}}"
     fi
 
     if [[ $last_command == 0 ]]; then
-        local status="${green}${checkmark}${nil}"
+        local status="${status_ok}${checkmark}${nil}"
     else
-        local status="${red}${fancy_x}${nil}"
+        local status="${status_error}${fancy_x}${nil}"
     fi
 
     local before_git_data="${status} [\w]"

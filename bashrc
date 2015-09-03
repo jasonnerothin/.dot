@@ -8,6 +8,7 @@
 
 __sourced=(
     exports
+    colors
     aliases
     functions
     completions
