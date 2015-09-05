@@ -17,7 +17,10 @@ __user_custom_prompt() {
         local venv="{${venv_color}${VIRTUAL_ENV##*/}${nil}}"
     fi
 
-    if [[ $last_command == 0 ]]; then
+    # Don't treat CTRL+C (130) as an error. This may catch some
+    # cases where we actually have an error, but these should be rare
+    # enough, and this is just a simple prompt function after all
+    if [[ $last_command == 0 ]] || [[ $last_command == 130 ]]; then
         local status="${status_ok}${checkmark}${nil}"
     else
         local status="${status_error}${fancy_x}${nil}"
