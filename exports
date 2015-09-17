@@ -6,20 +6,11 @@ __user_exports_pathadd() {
     fi
 }
 
-__user_exports_pythonpathadd() {
-    if [ -d "$1" ] && [[ ":$PYTHONPATH:" != *":$1:"* ]]; then
-        export PYTHONPATH="$1:$PYTHONPATH"
-    fi
-}
-
 __user_exports_pathadd "$HOME/opt/rabbitmq_server-3.2.1/sbin"
 __user_exports_pathadd "$HOME/opt/riemann-0.2.6/bin"
 __user_exports_pathadd "$HOME/opt/elasticsearch-1.3.2/bin"
-__user_exports_pathadd "$HOME/opt/logstash-1.4.0/bin"
 __user_exports_pathadd "$HOME/bin"
 __user_exports_pathadd "$HOME/.local/bin"
-
-__user_exports_pythonpathadd "$HOME/dev/mine/pythonpath"
 
 export EDITOR=vim
 
