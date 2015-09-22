@@ -20,9 +20,14 @@ __sourced=(
     fasd
 )
 
+__script_path="$(readlink -nf ${BASH_SOURCE[0]})"
+__script_dir=${__script_path%/*}
+
 for __item in ${__sourced[@]}; do
-    source "${HOME}/.bash/${__item}"
+    source "${__script_dir}/${__item}"
 done
 
 unset __item
+unset __script_path
+unset __script_dir
 unset __sourced
