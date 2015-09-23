@@ -5,6 +5,9 @@ repos:
   task:
     source: ssh://kilmand/home/dan/repos/task.git
     target: ~/.task
+  sdot:
+    source: ssh://kilmand/home/dan/repos/sdot.git
+    target: ~/.sdot
 
 symlinks:
   bash/bashrc: ~/.bashrc
