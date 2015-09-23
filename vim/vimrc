@@ -1,0 +1,25 @@
+inoremap jk <ESC>
+let mapleader = ","
+set nocompatible
+set backspace=indent,eol,start
+set history=700
+set ruler
+set showcmd
+set incsearch
+set nowrap
+set mouse=a
+syntax on
+set hlsearch
+filetype plugin on
+filetype indent on
+set encoding=utf8
+set ffs=unix,dos,mac
+set nobackup
+set nowb
+set noswapfile
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+set ignorecase
+set smartcase

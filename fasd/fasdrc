@@ -1,0 +1,7 @@
+#! /usr/bin/evn bash
+
+__user_fasd_interactive_func() {
+    local selector="fzf-tmux --select-1 --exit-0"
+    printf %s\\n "$1" | sed 's/^[^ ]*[ ]*//' | $selector
+}
+_FASD_INTERACTIVE_FUNC=__user_fasd_interactive_func
