@@ -109,8 +109,8 @@ init-kilmand-repo()
         git config receive.denyNonFastforwards true; \
         find objects -type d -exec chmod 02770 {} \;
     "
-    git remote add kilmand "ssh://kilmand/${remote_repo_path}"
-    git push -u kilmand master
+    git remote add origin "ssh://kilmand/${remote_repo_path}"
+    git push -u origin master
 }
 
 clear-vbox-network()
