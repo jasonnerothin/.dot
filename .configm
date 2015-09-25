@@ -1,7 +1,4 @@
 repos:
-  emacs.d:
-    source: git@github.com:dankilman/.emacs.d.git
-    target: ~/.emacs.d
   task:
     source: ssh://kilmand/home/dan/repos/task.git
     target: ~/.task
