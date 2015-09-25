@@ -13,4 +13,3 @@ symlinks:
   git/gitk: ~/.gitk
   tmux/tmux.conf: ~/.tmux.conf
   vim/vimrc: ~/.vimrc
-  /etc/profile.d/fzf.bash: /etc/profile.d/fzf.sh

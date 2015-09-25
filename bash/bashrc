@@ -18,6 +18,7 @@ __sourced=(
     see
     virtualenvwrapper
     fasd
+    fzf
 )
 
 __script_path="$(readlink -nf ${BASH_SOURCE[0]})"
