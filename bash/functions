@@ -5,25 +5,6 @@ set-title()
 	printf '\e]2;%s\a' "$*"
 }
 
-vpn()
-{
-    sudo systemctl $1 openvpn@giga
-}
-
-rest()
-{
-    local base_uri="$1"
-    local method
-    for method in GET POST PUT DELETE PATCH HEAD; do
-        eval "
-            ${method,,}() {
-                local resource=\$1; shift
-                http ${method} ${base_uri}\${resource} \$@
-            }
-        "
-    done
-}
-
 strip-ansi()
 {
     sed -r "s/\x1B\[.?([0-9]{1,2}(;[0-9]{1,2})?)?[l|h|m|K]//g"
@@ -42,38 +23,6 @@ quickbuild-log-suite-cat()
     quickbuild-log-cat $path | grep ${suite} | sed -r "s/.*${suite}: //g"
 }
 
-download-cloudify-packages()
-{
-    # local base=http://gigaspaces-repository-eu.s3.amazonaws.com/org/cloudify3/nightly
-    local base=http://tarzan/builds/GigaSpacesBuilds/cloudify3/nightly
-    local packages=(
-        components
-        core
-        ui
-        ubuntu-agent
-        centos-final-agent
-        windows-agent
-    )
-    for package in ${packages[@]}; do
-        wget ${base}/cloudify-${package}_amd64.deb -O ${package}.deb
-    done
-}
-
-__cloudify-ui()
-{
-    local default_server=11.0.0.7
-    local default_port=8100
-    rvm use ruby-1.8.7
-    pushd ~/dev/cloudify/cosmo-ui
-    UI_COSMO_SERVER=${server-$default_server} UI_COSMO_PORT=${port-$default_port} nodemon server.js &
-    grunt server &
-}
-
-jsonpp()
-{
-    see -l json <(cat $1 | jq '.')
-}
-
 cdconfiguration()
 {
     cd ~/work/cfy/configurations/$1
@@ -83,14 +32,6 @@ rmq()
 {
     rm -r ~/opt/rabbitmq_server-3.2.1/var
     rabbitmq-server
-}
-
-
-rmq-reset()
-{
-    rabbitmqctl stop_app
-    rabbitmqctl reset
-    rabbitmqctl start_app
 }
 
 taskcurrent()
