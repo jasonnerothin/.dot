@@ -8,6 +8,7 @@ repos:
 
 symlinks:
   bash/bashrc: ~/.bashrc
+  bash/exports: ~/.xprofile
   fasd/fasdrc: ~/.fasdrc
   git/gitconfig: ~/.gitconfig
   git/gitk: ~/.gitk
