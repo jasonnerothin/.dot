@@ -58,3 +58,11 @@ clear-vbox-network()
 {
     VBoxManage hostonlyif remove vboxnet${1}
 }
+
+backup-dconf-user()
+{
+    local conf_file="${HOME}/.config/dconf/user"
+    local conf_file_backup="${HOME}/docs/backup/system/config-dconf-user"
+    echo backing up $conf_file to $conf_file_backup
+    cp $conf_file $conf_file_backup
+}
