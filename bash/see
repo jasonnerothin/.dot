@@ -1,4 +1,4 @@
 #! /usr/bin/env bash
 
-SEE_PYGMENTIZE=/usr/bin/pygmentize
+SEE_PYGMENTIZE=/home/dan/.virtualenvs/2/pygments/bin/pygmentize
 source "$HOME/dev/mine/pygments_extensions/scripts/see.sh"
