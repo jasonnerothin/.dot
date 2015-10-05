@@ -5,6 +5,9 @@ repos:
   sdot:
     source: ssh://kilmand/home/dan/repos/sdot.git
     target: ~/.sdot
+  now:
+    source: ssh://kilmand/home/dan/repos/now.git
+    target: ~/now
 
 symlinks:
   bash/bashrc: ~/.bashrc
