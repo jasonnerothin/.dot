@@ -1,0 +1,46 @@
+#! /usr/bin/env bash
+
+NOW_ENCRYPTED_DIR="$HOME/.now"
+NOW_DECRYPTED_DIR="$HOME/now"
+
+__now_validate()
+{
+    if [ -z $NOW_ENCRYPTED_DIR ]; then
+        echo NOW_ENCRYPTED_DIR environment variable not defined 1>&2
+        return 1
+    fi
+    if [ -z $NOW_DECRYPTED_DIR ]; then
+        echo NOW_DECRYPTED_DIR environment variable not defined 1>&2
+        return 1
+    fi
+}
+
+now()
+{
+    __now_validate || return 1
+    if ! mount | grep $NOW_DECRYPTED_DIR > /dev/null 2>&1; then
+        encfs $NOW_ENCRYPTED_DIR $NOW_DECRYPTED_DIR || return 1
+    fi
+    cd $NOW_DECRYPTED_DIR
+}
+
+notnow()
+{
+    __now_validate || return 1
+    if mount | grep $NOW_DECRYPTED_DIR > /dev/null 2>&1; then
+        if [[ $PWD == *$NOW_DECRYPTED_DIR* ]]; then
+            cd
+        fi
+        fusermount -u $NOW_DECRYPTED_DIR || return 1
+    fi
+}
+
+backup-now()
+{
+    rsync --recursive \
+          --compress \
+          --delete \
+          --stats \
+          --rsh ssh \
+          $NOW_ENCRYPTED_DIR/ kilmand:/home/dan/backup/now
+}
