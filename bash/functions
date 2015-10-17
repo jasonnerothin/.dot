@@ -54,6 +54,12 @@ init-kilmand-repo()
     git push -u origin master
 }
 
+clone-kilmand-repo()
+{
+    local remote_repo_path="/home/dan/repos/${1}.git"
+    git clone kilmand:${remote_repo_path}
+}
+
 clear-vbox-network()
 {
     VBoxManage hostonlyif remove vboxnet${1}
