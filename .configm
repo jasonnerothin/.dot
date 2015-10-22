@@ -13,3 +13,5 @@ symlinks:
   git/gitconfig: ~/.gitconfig
   tmux/tmux.conf: ~/.tmux.conf
   vim/vimrc: ~/.vimrc
+  gnome/gnome-mimeapps.list: ~/.config/gnome-mimeapps.list
+  gnome/user-dirs.dirs: ~/.config/user-dirs.dirs

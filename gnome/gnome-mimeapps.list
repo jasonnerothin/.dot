@@ -1,0 +1,4 @@
+[Default Applications]
+text/plain=sublime_text_3.desktop
+text/x-python=sublime_text_3.desktop
+text/x-yaml=sublime_text_3.desktop
