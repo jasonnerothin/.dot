@@ -30,7 +30,7 @@ cdconfiguration()
 
 rmq()
 {
-    rm -r ~/opt/rabbitmq_server-3.5.3/var
+    rm -r ~/opt/rabbitmq_server-3.5.6/var
     rabbitmq-server
 }
 
