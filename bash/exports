@@ -7,6 +7,7 @@ __user_exports_pathadd() {
 }
 
 __user_exports_pathadd "$HOME/opt/rabbitmq_server-3.5.6/sbin"
+__user_exports_pathadd "$HOME/opt/riemann-0.2.6/bin"
 __user_exports_pathadd "$HOME/bin"
 
 export EDITOR=vim
