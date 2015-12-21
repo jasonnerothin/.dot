@@ -4,3 +4,4 @@ text/x-python=sublime_text_3.desktop
 text/x-yaml=sublime_text_3.desktop
 video/x-matroska=vlc.desktop
 video/avi=vlc.desktop
+audio/wav=vlc.desktop
