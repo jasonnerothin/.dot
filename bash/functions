@@ -25,7 +25,7 @@ quickbuild-log-suite-cat()
 
 cdconfiguration()
 {
-    cd ~/work/cfy/configurations/$1
+    cd ~/work/claw/configurations/$1
 }
 
 rmq()

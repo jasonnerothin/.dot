@@ -10,7 +10,7 @@ complete -o default -F _pip_completion pip
 
 __user_cdconfiguration_completion()
 {
-    COMPREPLY=( $(compgen -W "$(\ls ~/work/cfy/configurations)" -- \
+    COMPREPLY=( $(compgen -W "$(\ls ~/work/claw/configurations)" -- \
                 "${COMP_WORDS[$COMP_CWORD]}" ) )
 }
 complete -F __user_cdconfiguration_completion cdconfiguration
