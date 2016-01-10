@@ -7,7 +7,7 @@ __user_setup_virtualenvwrapper() {
     export WORKON_HOME="$HOME/.virtualenvs/${PYTHON_VERSION}"
     export VIRTUALENVWRAPPER_PYTHON="$(which python${PYTHON_VERSION})"
     export VIRTUALENVWRAPPER_VIRTUALENV="$(which virtualenv${PYTHON_VERSION})"
-    source "$HOME/dev/forks/virtualenvwrapper/virtualenvwrapper.sh"
+    source virtualenvwrapper.sh
 }
 
 __user_setup_virtualenvwrapper 2
