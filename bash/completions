@@ -1,12 +1,12 @@
 #! /usr/bin/env bash
 
-_pip_completion()
+__pip_completion()
 {
     COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
                    COMP_CWORD=$COMP_CWORD \
                    PIP_AUTO_COMPLETE=1 $1 ) )
 }
-complete -o default -F _pip_completion pip
+complete -o default -F __pip_completion pip
 
 __user_cdconfiguration_completion()
 {
@@ -14,3 +14,17 @@ __user_cdconfiguration_completion()
                 "${COMP_WORDS[$COMP_CWORD]}" ) )
 }
 complete -F __user_cdconfiguration_completion cdconfiguration
+
+__clue_argcomplete() {
+    local IFS=''
+    COMPREPLY=( $(IFS="$IFS" \
+                  COMP_LINE="$COMP_LINE" \
+                  COMP_POINT="$COMP_POINT" \
+                  _ARGCOMPLETE_COMP_WORDBREAKS="$COMP_WORDBREAKS" \
+                  _ARGCOMPLETE=1 \
+                  "$1" 8>&1 9>&2 1>/dev/null 2>/dev/null) )
+    if [[ $? != 0 ]]; then
+        unset COMPREPLY
+    fi
+}
+complete -o default -F __clue_argcomplete clue
