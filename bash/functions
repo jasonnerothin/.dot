@@ -72,3 +72,8 @@ backup-dconf-user()
     echo backing up $conf_file to $conf_file_backup
     cp $conf_file $conf_file_backup
 }
+
+upload-pypi()
+{
+    python setup.py sdist upload -r pypi
+}
