@@ -17,3 +17,5 @@ symlinks:
   gnome/user-dirs.dirs: ~/.config/user-dirs.dirs
   terminator/config: ~/.config/terminator/config
   sublime/Preferences.sublime-settings: ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+  atom/styles.less: ~/.atom/styles.less
+  atom/config.cson: ~/.atom/config.cson

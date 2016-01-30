@@ -1,0 +1,20 @@
+"*":
+  core:
+    audioBeep: false
+    packagesWithKeymapsDisabled: [
+      "highlight-line"
+    ]
+    projectHome: "/home/dan/work/atom"
+    themes: [
+      "seti-ui"
+      "monokai-seti"
+    ]
+  editor:
+    fontFamily: "Consolas"
+    fontSize: 18
+    invisibles: {}
+    lineHeight: 1
+    showIndentGuide: true
+  "status-bar": {}
+  welcome:
+    showOnStartup: false

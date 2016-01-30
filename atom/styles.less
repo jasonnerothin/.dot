@@ -1,0 +1,12 @@
+@gutterBackground: rgb(21, 23, 24);
+@cursorBackground: rgba(65, 65, 65, 0.3);
+
+atom-text-editor, atom-text-editor::shadow {
+  .gutter {
+    background-color: @gutterBackground;
+  }
+
+  .gutter .cursor-line.cursor-line-no-selection {
+    background-color: @cursorBackground;
+  }
+}
