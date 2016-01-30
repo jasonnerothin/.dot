@@ -15,6 +15,5 @@
     invisibles: {}
     lineHeight: 1
     showIndentGuide: true
-  "status-bar": {}
   welcome:
     showOnStartup: false
