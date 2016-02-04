@@ -1,0 +1,8 @@
+#! /bin/bash
+
+# eager_sudo=true
+# noconfirm=true
+# edit_pkgbuilds='never'
+# opmode='upgrade'
+# sync_mode='install'
+# makepkg_options+=' --noconfirm'

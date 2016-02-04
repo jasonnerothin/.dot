@@ -19,3 +19,4 @@ symlinks:
   sublime/Preferences.sublime-settings: ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
   atom/styles.less: ~/.atom/styles.less
   atom/config.cson: ~/.atom/config.cson
+  aurget/aurgetrc: ~/.config/aurgetrc
