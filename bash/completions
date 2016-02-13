@@ -27,4 +27,4 @@ __clue_argcomplete() {
         unset COMPREPLY
     fi
 }
-complete -o default -F __clue_argcomplete clue
+complete -o nospace -o default -F __clue_argcomplete clue
