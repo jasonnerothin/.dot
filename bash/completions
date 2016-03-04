@@ -15,7 +15,7 @@ __user_cdconfiguration_completion()
 }
 complete -F __user_cdconfiguration_completion cdconfiguration
 
-__clue_argcomplete() {
+__python_argcomplete() {
     local IFS=''
     COMPREPLY=( $(IFS="$IFS" \
                   COMP_LINE="$COMP_LINE" \
@@ -27,4 +27,5 @@ __clue_argcomplete() {
         unset COMPREPLY
     fi
 }
-complete -o nospace -o default -F __clue_argcomplete clue
+complete -o nospace -o default -F __python_argcomplete clue
+complete -o nospace -o default -F __python_argcomplete clee
