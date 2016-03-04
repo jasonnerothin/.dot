@@ -16,7 +16,7 @@
 	[
 		"no_round"
 	],
-	"font_size": 15,
+	"font_size": 14,
 	"highlight_line": true,
 	"ignored_packages":
 	[
@@ -46,5 +46,6 @@
 	"tab_size": 4,
 	"theme": "Phoenix Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": "false"
 }
