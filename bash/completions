@@ -30,4 +30,4 @@ __python_argcomplete() {
 complete -o nospace -o default -F __python_argcomplete clue
 complete -o nospace -o default -F __python_argcomplete cfy
 complete -o nospace -o default -F __python_argcomplete claw
-complete -o nospace -o default -F __python_argcomplete jest
+complete -o nospace -o default -F __python_argcomplete je
