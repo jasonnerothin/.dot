@@ -31,3 +31,4 @@ complete -o nospace -o default -F __python_argcomplete clue
 complete -o nospace -o default -F __python_argcomplete cfy
 complete -o nospace -o default -F __python_argcomplete claw
 complete -o nospace -o default -F __python_argcomplete je
+complete -o nospace -o default -F __python_argcomplete tmuxp

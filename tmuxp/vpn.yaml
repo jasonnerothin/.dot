@@ -1,0 +1,4 @@
+session_name: vpn
+windows:
+- panes:
+  - which vpn > /dev/null 2>&1 || sudo vpn

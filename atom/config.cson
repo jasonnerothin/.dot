@@ -1,6 +1,9 @@
 "*":
   core:
     audioBeep: false
+    disabledPackages: [
+      "spell-check"
+    ]
     packagesWithKeymapsDisabled: [
       "highlight-line"
     ]
@@ -17,5 +20,6 @@
     showIndentGuide: true
   "exception-reporting":
     userId: "3d4eea3d-6513-e09b-0068-da7b82f6c5cf"
+  "spell-check": {}
   welcome:
     showOnStartup: false

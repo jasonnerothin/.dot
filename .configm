@@ -20,3 +20,4 @@ symlinks:
   atom/styles.less: ~/.atom/styles.less
   atom/config.cson: ~/.atom/config.cson
   aurget/aurgetrc: ~/.config/aurgetrc
+  tmuxp: ~/.tmuxp
