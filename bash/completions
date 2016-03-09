@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-__pip_completion()
+__user_pip_completion()
 {
     COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
                    COMP_CWORD=$COMP_CWORD \
@@ -15,7 +15,7 @@ __user_cdconfiguration_completion()
 }
 complete -F __user_cdconfiguration_completion cdconfiguration
 
-__python_argcomplete() {
+__user_python_argcomplete() {
     local IFS=''
     COMPREPLY=( $(IFS="$IFS" \
                   COMP_LINE="$COMP_LINE" \
@@ -27,13 +27,13 @@ __python_argcomplete() {
         unset COMPREPLY
     fi
 }
-__python_completions=(
+__user_python_completions=(
     clue
     cfy
     claw
     je
     tmuxp
 )
-for __python_completion in ${__python_completions[@]}; do
-    complete -o nospace -o default -F __python_argcomplete ${__python_completion}
+for __user_python_completion in ${__user_python_completions[@]}; do
+    complete -o nospace -o default -F __python_argcomplete ${__user_python_completion}
 done
