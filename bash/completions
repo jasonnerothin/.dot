@@ -35,5 +35,5 @@ __user_python_completions=(
     tmuxp
 )
 for __user_python_completion in ${__user_python_completions[@]}; do
-    complete -o nospace -o default -F __python_argcomplete ${__user_python_completion}
+    complete -o nospace -o default -F __user_python_argcomplete ${__user_python_completion}
 done
