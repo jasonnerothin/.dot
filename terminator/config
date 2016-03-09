@@ -1,6 +1,8 @@
 [global_config]
   enabled_plugins = ,
 [keybindings]
+  resize_down = None
+  resize_up = None
 [layouts]
   [[default]]
     [[[child1]]]
