@@ -1,5 +1,3 @@
-inoremap jk <ESC>
-let mapleader = ","
 set nocompatible
 set backspace=indent,eol,start
 set history=700
@@ -8,10 +6,7 @@ set showcmd
 set incsearch
 set nowrap
 set mouse=a
-syntax on
 set hlsearch
-filetype plugin on
-filetype indent on
 set encoding=utf8
 set ffs=unix,dos,mac
 set nobackup
@@ -23,3 +18,11 @@ set shiftwidth=4
 set tabstop=4
 set ignorecase
 set smartcase
+set number
+
+inoremap jk <ESC>
+let mapleader = ","
+colorscheme slate
+syntax on
+filetype plugin on
+filetype indent on
