@@ -22,7 +22,6 @@ set number
 
 inoremap jk <ESC>
 let mapleader = ","
-colorscheme slate
 syntax on
 filetype plugin on
 filetype indent on
