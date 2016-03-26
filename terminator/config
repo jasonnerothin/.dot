@@ -1,5 +1,6 @@
 [global_config]
   enabled_plugins = ,
+  suppress_multiple_term_dialog = True
 [keybindings]
   resize_down = None
   resize_up = None
