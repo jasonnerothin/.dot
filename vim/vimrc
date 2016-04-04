@@ -19,9 +19,13 @@ set tabstop=4
 set ignorecase
 set smartcase
 set number
+set t_Co=256
+set cursorline
 
+colorscheme peachpuff
 inoremap jk <ESC>
 let mapleader = ","
 syntax on
 filetype plugin on
 filetype indent on
+hi CursorLine cterm=NONE ctermfg=NONE ctermbg=236
