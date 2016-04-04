@@ -17,7 +17,6 @@
   [[default]]
     background_darkness = 0.88
     background_image = None
-    background_type = transparent
     cursor_blink = False
     cursor_color = "#404040"
     font = Consolas 15
