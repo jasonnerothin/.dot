@@ -21,7 +21,6 @@ set smartcase
 set number
 set t_Co=256
 set cursorline
-set iskeyword-=_
 
 colorscheme peachpuff
 inoremap jk <ESC>
