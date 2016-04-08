@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+# disable terminal CTRL-S/CTRL-Q handling
+stty -ixon
