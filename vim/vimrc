@@ -21,6 +21,7 @@ set smartcase
 set number
 set t_Co=256
 set cursorline
+set wildignore+=*.py[cod]
 
 colorscheme peachpuff
 inoremap jk <ESC>
