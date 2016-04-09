@@ -37,7 +37,4 @@ filetype plugin on
 filetype indent on
 hi CursorLine cterm=NONE ctermfg=NONE ctermbg=236
 
-command! PythonCtags call PythonCtags()
-function! PythonCtags()
-    execute '!find -name *.py -exec ctags --python-kinds=-i {} +'
-endfunction
+command! PythonCtags execute '!ctags -R --python-kinds=-i --languages=python .'
