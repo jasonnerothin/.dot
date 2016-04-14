@@ -32,6 +32,7 @@ set cryptmethod=blowfish2
 
 colorscheme peachpuff
 inoremap jk <ESC>
+nnoremap Q <nop>
 let mapleader = ","
 syntax on
 filetype plugin on
