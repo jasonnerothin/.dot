@@ -2,8 +2,25 @@
   enabled_plugins = ,
   suppress_multiple_term_dialog = True
 [keybindings]
+  broadcast_all = None
+  broadcast_group = None
+  broadcast_off = None
+  group_all = None
+  group_tab = None
+  help = None
+  hide_window = None
+  insert_number = None
+  insert_padded = None
+  layout_launcher = None
+  new_terminator = None
+  new_window = None
   resize_down = None
   resize_up = None
+  rotate_ccw = None
+  rotate_cw = None
+  scaled_zoom = None
+  ungroup_all = None
+  ungroup_tab = None
 [layouts]
   [[default]]
     [[[child1]]]
