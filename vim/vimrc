@@ -29,6 +29,7 @@ set wildmenu
 set wildmode=longest:full,full
 set shortmess+=I
 set cryptmethod=blowfish2
+set laststatus=2
 
 colorscheme peachpuff
 inoremap jk <ESC>
