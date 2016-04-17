@@ -38,6 +38,8 @@ let mapleader = ","
 syntax on
 filetype plugin on
 filetype indent on
-highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=236
+highlight CursorLine   cterm=NONE ctermfg=NONE ctermbg=236
+highlight StatusLine   cterm=NONE ctermfg=NONE ctermbg=236
+highlight StatusLineNC cterm=NONE ctermfg=NONE ctermbg=235
 
 command! PythonCtags execute '!ctags -R --python-kinds=-i --languages=python .'
