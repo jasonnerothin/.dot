@@ -28,7 +28,7 @@ set virtualedit=block
 set wildmenu
 set wildmode=longest:full,full
 set shortmess+=I
-set cryptmethod=blowfish2
+set cryptmethod=blowfish
 set laststatus=2
 
 filetype plugin on
