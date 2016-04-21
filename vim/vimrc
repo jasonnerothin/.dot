@@ -44,6 +44,6 @@ highlight Search       cterm=NONE ctermfg=NONE ctermbg=237
 let mapleader = ","
 inoremap          jk    <ESC>
 nnoremap <silent> <C-L> :<C-U>nohlsearch<bar>redraw<CR>
-nnoremap          Q     <nop>
+nnoremap          Q     @@
 
 command! PythonCtags execute '!ctags -R --python-kinds=-i --languages=python .'
