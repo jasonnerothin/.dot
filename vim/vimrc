@@ -36,7 +36,9 @@ filetype indent on
 
 syntax on
 colorscheme peachpuff
+highlight LineNr       cterm=NONE ctermfg=248  ctermbg=NONE
 highlight CursorLine   cterm=NONE ctermfg=NONE ctermbg=236
+highlight CursorLineNr cterm=NONE ctermfg=248  ctermbg=236
 highlight StatusLine   cterm=NONE ctermfg=NONE ctermbg=236
 highlight StatusLineNC cterm=NONE ctermfg=NONE ctermbg=235
 highlight Search       cterm=NONE ctermfg=NONE ctermbg=237
