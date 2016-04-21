@@ -1,5 +1,10 @@
 set nocompatible
+set nobackup
+set nowritebackup
+set noswapfile
 set backspace=indent,eol,start
+set encoding=utf8
+set fileformats=unix,dos,mac
 set history=700
 set ruler
 set showcmd
@@ -7,11 +12,6 @@ set incsearch
 set nowrap
 set mouse=a
 set hlsearch
-set encoding=utf8
-set ffs=unix,dos,mac
-set nobackup
-set nowb
-set noswapfile
 set expandtab
 set smarttab
 set shiftwidth=4
