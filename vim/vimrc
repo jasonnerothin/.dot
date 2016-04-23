@@ -49,4 +49,4 @@ nnoremap <silent> <C-L> :<C-U>nohlsearch<bar>redraw<CR>
 nnoremap          Q     @@
 
 command! PythonCtags execute '!ctags -R --python-kinds=-i --languages=python .'
-command! StripAnsi   execute '%s/\v[\?]\[.?([0-9]{1,2}(;[0-9]{1,2})?)?[lhmK]//g'
+command! StripAnsi   execute '%s/\v[\?]\[.?([0-9]{1,2}(;[0-9]{1,2})?)?[lhmK]|//g'
