@@ -49,6 +49,6 @@ nnoremap <silent> <C-L> :<C-U>nohlsearch<bar>redraw<CR>
 nnoremap          Q     @@
 
 command!          PythonCtags !ctags -R --python-kinds=-i --languages=python .
-command!          StripAnsi   %s/\v[\?]\[.?([0-9]{1,2}(;[0-9]{1,2})?)?[lhmK]|//g
+command!          StripAnsi   %s/\v[\?]\[.?([0-9]{1,2}(;[0-9]{1,2})?)?[lhmK]|[]//g
 command! -nargs=1 Ag          cexpr system('ag --vimgrep <args>')
 command! -nargs=1 Lag         lexpr system('ag --vimgrep <args>')
