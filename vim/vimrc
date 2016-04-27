@@ -50,10 +50,10 @@ nnoremap          Q     @@
 
 command!          PythonCtags !ctags -R --python-kinds=-i --languages=python .
 command!          StripAnsi   %s/\v[\?]\[.?([0-9]{1,2}(;[0-9]{1,2})?)?[lhmK]|[]//g
-command! -nargs=1 Ag          cexpr system('ag --vimgrep <args>')
-command! -nargs=1 Lag         lexpr system('ag --vimgrep <args>')
-command!          Flake8      cexpr system('flake8 .')
-command!          Lflake8     lexpr system('flake8 .')
+command! -nargs=1 Ag          call Search('ag --vimgrep <args>', 'c')
+command! -nargs=1 Lag         call Search('ag --vimgrep <args>', 'l')
+command!          Flake8      call Search('flake8 .', 'c')
+command!          Lflake8     call Search('flake8 .', 'l')
 command!          ColorGroups
     \ hi r  ctermfg=red |
     \ hi g  ctermfg=green |
@@ -61,3 +61,10 @@ command!          ColorGroups
     \ hi y  ctermfg=yellow |
     \ hi m  ctermfg=magenta |
     \ hi cy ctermfg=cyan
+
+function! Search(command, mode)
+    execute a:mode.'expr system('''.a:command.''')'
+    execute 'nnoremap <C-J> :<C-U>'.a:mode.'next<CR>'
+    execute 'nnoremap <C-K> :<C-U>'.a:mode.'previous<CR>'
+    execute a:mode.'open'
+endfunction
