@@ -15,7 +15,6 @@ __sourced=(
     completions
     git
     prompt
-    # rvm
     see
     virtualenvwrapper
     fasd
