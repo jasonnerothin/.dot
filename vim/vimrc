@@ -56,7 +56,7 @@ command!          Flake8      call Search('flake8 .', 'c')
 command!          Lflake8     call Search('flake8 .', 'l')
 command!          ColorGroups call ColorGroups()
 
-function ColorGroups()
+function! ColorGroups()
     hi r  ctermfg=red
     hi g  ctermfg=green
     hi b  ctermfg=blue
