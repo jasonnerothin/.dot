@@ -54,13 +54,16 @@ command! -nargs=1 Ag          call Search('ag --vimgrep <args>', 'c')
 command! -nargs=1 Lag         call Search('ag --vimgrep <args>', 'l')
 command!          Flake8      call Search('flake8 .', 'c')
 command!          Lflake8     call Search('flake8 .', 'l')
-command!          ColorGroups
-    \ hi r  ctermfg=red |
-    \ hi g  ctermfg=green |
-    \ hi b  ctermfg=blue |
-    \ hi y  ctermfg=yellow |
-    \ hi m  ctermfg=magenta |
-    \ hi cy ctermfg=cyan
+command!          ColorGroups call ColorGroups()
+
+function ColorGroups()
+    hi r  ctermfg=red
+    hi g  ctermfg=green
+    hi b  ctermfg=blue
+    hi y  ctermfg=yellow
+    hi m  ctermfg=magenta
+    hi cy ctermfg=cyan
+endfunction
 
 function! Search(command, mode)
     execute a:mode.'expr system('''.a:command.''')'
