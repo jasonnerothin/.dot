@@ -49,7 +49,7 @@ nnoremap <silent> <C-L> :<C-U>nohlsearch<bar>redraw<CR>
 nnoremap          Q     @@
 
 command!          PythonCtags !ctags -R --python-kinds=-i --languages=python .
-command!          StripAnsi   %s/\v[\?]\[.?([0-9]{1,2}(;[0-9]{1,2})?)?[lhmK]|[]//g
+command!          StripAnsi   %s/\v[\?]\[.?(\d{1,2}(;\d{1,2})?)?[lhmK]|[]//g
 command! -nargs=1 Ag          call Search('ag --vimgrep <args>', 'c')
 command! -nargs=1 Lag         call Search('ag --vimgrep <args>', 'l')
 command!          Flake8      call Search('flake8 .', 'c')
