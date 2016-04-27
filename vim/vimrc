@@ -67,7 +67,7 @@ endfunction
 
 function! Search(command, mode)
     execute a:mode.'expr system('''.a:command.''')'
-    execute 'nnoremap <C-J> :<C-U>'.a:mode.'next<CR>'
-    execute 'nnoremap <C-K> :<C-U>'.a:mode.'previous<CR>'
+    execute 'nnoremap <silent> <C-J> :<C-U>'.a:mode.'next<CR>'
+    execute 'nnoremap <silent> <C-K> :<C-U>'.a:mode.'previous<CR>'
     execute a:mode.'open'
 endfunction
