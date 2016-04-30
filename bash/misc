@@ -1,4 +1,7 @@
 #! /usr/bin/env bash
 
+# enable ** expansion
+shopt -s globstar
+
 # disable terminal CTRL-S/CTRL-Q handling
 stty -ixon
