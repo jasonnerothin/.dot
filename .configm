@@ -6,6 +6,7 @@ repos:
     source: ssh://kilmand/home/dan/repos/sdot.git
     target: ~/.sdot
 
+
 symlinks:
   bash/bashrc: ~/.bashrc
   bash/exports: ~/.xprofile
